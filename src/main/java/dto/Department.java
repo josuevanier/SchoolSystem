@@ -1,5 +1,9 @@
 package dto;
 
+/**
+ * Contains the info of a department
+ * @author  Joseph Josue Forestal
+ */
 public class Department {
     private String id;
     private int nextId;
@@ -11,5 +15,8 @@ public class Department {
      */
     public String toString(){
         return "";
+    }
+    public  Department (String id, String departmentName ){
+
     }
 }
