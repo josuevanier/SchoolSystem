@@ -35,4 +35,21 @@ public class SchoolManagementSystem {
     public void addDepartement(String departmentName){
 
     }
+
+    /**
+     * print the student
+     */
+    public void printStudent(){
+
+    }
+
+    /**
+     * add course
+     * @param courseName name of the course
+     * @param credit credits of the course
+     * @param id id of the course
+     */
+    public void addCourse(String courseName, double credit, String id){
+
+    }
 }
