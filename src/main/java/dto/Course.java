@@ -18,7 +18,7 @@ public class Course {
      * @param id
      * @param credit
      */
-    public Course(String id, double credit, Department){
+    public Course(String id, double credit, Department department){
 
     }
 
