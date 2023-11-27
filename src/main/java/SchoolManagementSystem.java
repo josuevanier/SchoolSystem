@@ -1,6 +1,10 @@
 import dto.Course;
 import dto.Department;
 
+/**
+ * Contains  method of a school management
+ * @author Joseph Josue Forestal
+ */
 public class SchoolManagementSystem {
 
     /**
