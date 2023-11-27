@@ -47,9 +47,18 @@ public class SchoolManagementSystem {
      * add course
      * @param courseName name of the course
      * @param credit credits of the course
-     * @param id id of the course
+     * @param courseId id of the course
      */
-    public void addCourse(String courseName, double credit, String id){
+    public void addCourse(String courseName, double credit, String courseId){
+
+    }
+
+    /**
+     * Register the course
+     * @param studentId student id
+     * @param courseId
+     */
+    public void registerCourse(String studentId, String courseId){
 
     }
 }
