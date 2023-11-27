@@ -1,3 +1,5 @@
+import dto.Department;
+
 public class SchoolManagementSystem {
 
     /**
@@ -5,8 +7,10 @@ public class SchoolManagementSystem {
      * @param departementId the id of the department
      * @return  info on the departement
      */
-    public  String findDepartment(String departementId){
+    public Department findDepartment(String departementId){
 
     }
+
+
 
 }
