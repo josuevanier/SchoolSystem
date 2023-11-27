@@ -17,7 +17,6 @@ public class SchoolManagementSystem {
      */
      public void printTeacher(){
 
-
      }
 
     /***
@@ -29,4 +28,11 @@ public class SchoolManagementSystem {
 
     }
 
+    /**
+     * New department
+     * @param departmentName name of the department
+     */
+    public void addDepartement(String departmentName){
+
+    }
 }
