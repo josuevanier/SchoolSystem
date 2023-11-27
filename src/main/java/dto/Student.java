@@ -1,5 +1,9 @@
 package dto;
 
+/**
+ * Contains the info of a student
+ * @author Joseph Josue Forestal
+ */
 public class Student {
     private String fname;
     private String name;
