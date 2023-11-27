@@ -11,6 +11,22 @@ public class SchoolManagementSystem {
 
     }
 
+    /**
+     * print the teacher i guess
+     * no return type
+     */
+     public void printTeacher(){
 
+
+     }
+
+    /***
+     * modify course and the teacher
+     * @param teacherId the teacher id
+     * @param courseId the course id
+     */
+    public void modifyCourseTeacher(String teacherId, String courseId){
+
+    }
 
 }
