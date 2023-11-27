@@ -7,6 +7,20 @@ public class Course {
     private Teacher teacher;
     private  String courseName;
     private int studentNUM;
+
+    /**
+     * Constructor to create the object course
+     * @param id
+     * @param credit
+     */
+    public Course(String id, double credit, Department){
+
+    }
+
+    /**
+     * String method that return a string
+     * @return a String
+     */
     public String toString(){
         return "";
     }
