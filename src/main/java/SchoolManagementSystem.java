@@ -71,4 +71,12 @@ public class SchoolManagementSystem {
     public Course findCourse(String courseName){
 
     }
+
+    /**
+     * Print department
+     */
+    public void printDepartment(){
+
+    }
+
 }
