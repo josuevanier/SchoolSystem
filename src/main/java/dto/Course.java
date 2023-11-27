@@ -1,5 +1,9 @@
 package dto;
 
+/**
+ * Contains the info a course
+ * @author Joseph Josue Forestal
+ */
 public class Course {
     private double credit;
     private String id;
@@ -7,6 +11,7 @@ public class Course {
     private Teacher teacher;
     private  String courseName;
     private int studentNUM;
+    private final static int MAX_ID_NUM = 0;
 
     /**
      * Constructor to create the object course
