@@ -1,3 +1,4 @@
+import dto.Course;
 import dto.Department;
 
 public class SchoolManagementSystem {
@@ -59,6 +60,15 @@ public class SchoolManagementSystem {
      * @param courseId
      */
     public void registerCourse(String studentId, String courseId){
+
+    }
+
+    /**
+     * find the course
+     * @param courseName based on the course name
+     * @return
+     */
+    public Course findCourse(String courseName){
 
     }
 }
