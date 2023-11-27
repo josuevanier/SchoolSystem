@@ -8,7 +8,7 @@ public class SchoolManagementSystem {
      * @return  info on the departement
      */
     public Department findDepartment(String departementId){
-
+        return null;
     }
 
     /**
