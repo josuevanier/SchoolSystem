@@ -79,4 +79,21 @@ public class SchoolManagementSystem {
 
     }
 
+    /**
+     * Add a student
+     * @param lname last name of student
+     * @param name first name of student
+     * @param id student id
+     */
+    public void addStudent(String lname, String name, String id){
+
+    }
+
+    /***
+     *  Find teacher
+     * @param name teacher's name
+     */
+    public void findTeacher(String name){
+
+    }
 }
