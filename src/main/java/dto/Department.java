@@ -10,13 +10,19 @@ public class Department {
     private String departmentName;
 
     /**
+     *
+     * @param id
+     * @param departmentName
+     */
+    public  Department (String id, String departmentName ){
+
+    }
+
+    /**
      * String method that return a string.
      * @return a String
      */
     public String toString(){
         return "";
-    }
-    public  Department (String id, String departmentName ){
-
     }
 }
