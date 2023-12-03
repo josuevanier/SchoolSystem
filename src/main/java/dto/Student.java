@@ -10,13 +10,14 @@ public class Student {
     private String id;
     private int nextId;
     private int courseNum;
-    private Course course;
+    private Course[] courses;
 
     /**
      * String method that return a string.
      * @return a String
      */
-    public String toString(){
+    public String toString(String fname, String lname){
+
         return "";
     }
 }
