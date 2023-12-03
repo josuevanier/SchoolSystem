@@ -12,6 +12,12 @@ public class Student {
     private int courseNum;
     private Course[] courses;
 
+    /**
+     * Contains the info of a student as an object
+     * @param fname fname of student
+     * @param lname last name of student
+     * @param id id of student
+     */
     public Student(String fname, String lname, String id){
         this.fname = fname;
         this.name = name;
