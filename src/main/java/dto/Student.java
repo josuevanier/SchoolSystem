@@ -12,7 +12,13 @@ public class Student {
     private int courseNum;
     private Course[] courses;
 
-    public Student(String fname, String lname){}
+    public Student(String fname, String lname, String id){
+        this.fname = fname;
+        this.name = name;
+        this.id = String.format("COO%d", nextId++)
+        this.courseNum = 0;
+        this.courses = new Course[MAX_COURSES];
+    }
 
     /**
      * String method that return a string.
