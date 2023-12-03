@@ -7,6 +7,13 @@ import dto.Department;
  */
 public class SchoolManagementSystem {
 
+    private static final int MAX_DEPARTMENTS = 5;
+    private static final int MAX_STUDENTS = 200;
+    private static final int MAX_TEACHERS= 20;
+    private static final int MAX_COURSES = 30;
+    private static final int MAX_REGISTERED_COURSES = 5;
+
+
     /**
      * Find department
      * @param departementId the id of the department
