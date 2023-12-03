@@ -10,6 +10,7 @@ public class Student {
     private String id;
     private int nextId;
     private int courseNum;
+    private Course course;
 
     /**
      * String method that return a string.
