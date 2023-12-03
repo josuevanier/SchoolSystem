@@ -13,6 +13,16 @@ public class SchoolManagementSystem {
     private static final int MAX_COURSES = 30;
     private static final int MAX_REGISTERED_COURSES = 5;
 
+    private int departmentCount;
+    private int studentCount;
+    private int teacherCount;
+    private int courseCount;
+
+    public SchoolManagementSystem(){
+        this.departments = new Department [MAX_DEPARTMENTS];
+
+    }
+
 
     /**
      * Find department
