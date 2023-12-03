@@ -20,6 +20,11 @@ public class SchoolManagementSystem {
 
     public SchoolManagementSystem(){
         this.departments = new Department [MAX_DEPARTMENTS];
+        this.students = new Student [MAX_STUDENTS];
+        this.teachers = new  Teacher [MAX_TEACHERS];
+        this.courses = new Course [MAX_COURSES];
+
+        this.
 
     }
 
