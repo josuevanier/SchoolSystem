@@ -8,8 +8,9 @@ public class Student {
     private String fname;
     private String name;
     private String id;
-    private int nextId;
+    private int nextId = 1;
     private int courseNum;
+    private Department department;
     private Course[] courses;
 
     /**
@@ -18,11 +19,12 @@ public class Student {
      * @param lname last name of student
      * @param id id of student
      */
-    public Student(String fname, String lname, String id){
+    public Student(String fname, String lname, Department department){
         this.fname = fname;
         this.name = name;
         this.id = String.format("COO%d", nextId++)
         this.courseNum = 0;
+        this.department = department;
         this.courses = new Course[MAX_COURSES];
     }
 
