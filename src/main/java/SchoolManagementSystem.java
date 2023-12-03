@@ -24,7 +24,10 @@ public class SchoolManagementSystem {
         this.teachers = new  Teacher [MAX_TEACHERS];
         this.courses = new Course [MAX_COURSES];
 
-        this.
+        this.departmentCount = 0;
+        this.studentCount = 0;
+        this.teacherCount = 0;
+        this.courseCount = 0;
 
     }
 
