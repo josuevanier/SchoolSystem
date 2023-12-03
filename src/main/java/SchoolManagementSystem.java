@@ -76,6 +76,9 @@ public class SchoolManagementSystem {
      * @param departmentName name of the department
      */
     public void addDepartement(String departmentName){
+        if(department < MAX_DEPARTMENTS){
+
+        }
 
     }
 
@@ -118,6 +121,11 @@ public class SchoolManagementSystem {
      * Print department
      */
     public void printDepartment(){
+        for(Student student : students){
+            if(student != null){
+                System.out.println(String.format);
+            }
+        }
 
     }
 
