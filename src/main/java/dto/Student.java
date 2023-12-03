@@ -12,11 +12,13 @@ public class Student {
     private int courseNum;
     private Course[] courses;
 
+    public Student
+
     /**
      * String method that return a string.
      * @return a String
      */
-    public String toString(String fname, String lname){
+    public String toString(){
 
         return "";
     }
