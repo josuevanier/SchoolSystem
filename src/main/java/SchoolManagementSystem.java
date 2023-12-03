@@ -38,7 +38,14 @@ public class SchoolManagementSystem {
      * @return  info on the departement
      */
     public Department findDepartment(String departementId){
+
+        for(Department departement : departements){
+            if (departement != null && departement.getId().equals(departementId) ){
+                return departement;
+            }
+        }
         return null;
+
     }
 
     /**
