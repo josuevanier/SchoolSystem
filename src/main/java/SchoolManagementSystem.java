@@ -68,7 +68,7 @@ public class SchoolManagementSystem {
                 System.out.println(departement);
             }
         }
-
+        System.out.println("Not found");
     }
 
     /**
