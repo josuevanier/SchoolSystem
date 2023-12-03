@@ -63,6 +63,12 @@ public class SchoolManagementSystem {
      */
     public void modifyCourseTeacher(String teacherId, String courseId){
 
+        for(Department departement = departements){
+            if (departement != null){
+                System.out.println(departement);
+            }
+        }
+
     }
 
     /**
