@@ -12,7 +12,7 @@ public class Student {
     private int courseNum;
     private Course[] courses;
 
-    public Student
+    public Student(String fname, String lname){}
 
     /**
      * String method that return a string.
