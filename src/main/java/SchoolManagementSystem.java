@@ -110,6 +110,7 @@ public class SchoolManagementSystem {
      */
     public void registerCourse(String studentId, String courseId){
 
+
     }
 
     /**
@@ -125,13 +126,15 @@ public class SchoolManagementSystem {
      * Print department
      */
     public void printDepartment(){
-        for(Student student : students){
-            if(student != null){
-                System.out.printf("Studeent info: id: %s, name: %s, fname: %s, department: %s, number of course: %d, courses:  ");
+        for(Department department: departments){
+            if (department != null){
+                System.out.printf("id: %s, department name : %s ", department.getid(), departement.getDepartment);
             }
         }
 
-    }
+        }
+
+
 
     /**
      * Add a student
