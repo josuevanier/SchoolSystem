@@ -38,7 +38,6 @@ public class SchoolManagementSystem {
      * @return  info on the departement
      */
     public Department findDepartment(String departementId){
-
         for(Department departement : departements){
             if (departement != null && departement.getId().equals(departementId) ){
                 return departement;
@@ -123,7 +122,7 @@ public class SchoolManagementSystem {
     public void printDepartment(){
         for(Student student : students){
             if(student != null){
-                System.out.println(String.format);
+                System.out.printf("Studeent info: id: %s, name: %s, fname: %s, department: %s, number of course: %d, courses:  ");
             }
         }
 
