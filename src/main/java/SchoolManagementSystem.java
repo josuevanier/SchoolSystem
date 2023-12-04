@@ -52,6 +52,17 @@ public class SchoolManagementSystem {
      * no return type
      */
      public void printTeacher(){
+         for(Department department : departments){
+             if(department != null){
+                 for (Teacher teacher : department.getTeacher){
+                     if(teacher != null){
+                         System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s",
+                                 Teacher.getid(), Teacher getfname(), Teacher.getlname,Department.getdepartmentName);
+                     }
+                 }
+             }
+         }
+     }
 
      }
 
@@ -87,7 +98,7 @@ public class SchoolManagementSystem {
     public void printStudent(){
         for(Student student : students){
             if(student != null){
-                System.out.printf("Studeent info: id: %s, name: %s, fname: %s, department: %s, number of course: %d, courses:  ");
+                System.out.printf("Student info: id: %s, name: %s, fname: %s, department: %s, number of course: %d, courses:  ");
             }
         }
 
