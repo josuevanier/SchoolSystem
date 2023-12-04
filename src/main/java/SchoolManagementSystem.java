@@ -85,6 +85,11 @@ public class SchoolManagementSystem {
      * print the student
      */
     public void printStudent(){
+        for(Student student : students){
+            if(student != null){
+                System.out.printf("Studeent info: id: %s, name: %s, fname: %s, department: %s, number of course: %d, courses:  ");
+            }
+        }
 
     }
 
@@ -142,7 +147,7 @@ public class SchoolManagementSystem {
      *  Find teacher
      * @param name teacher's name
      */
-    public void findTeacher(String name){
+    public void findTeacher( ){
 
     }
 }
