@@ -1,50 +1,59 @@
-import dto.Course;
-import dto.Department;
+package org.example.dto;
+
+import lombok.Getter;
+
+
 
 /**
  * Contains  method of a school management
  * @author Joseph Josue Forestal
  */
+@Getter
 public class SchoolManagementSystem {
 
     private static final int MAX_DEPARTMENTS = 5;
     private static final int MAX_STUDENTS = 200;
     private static final int MAX_TEACHERS= 20;
+    @Getter
     private static final int MAX_COURSES = 30;
     private static final int MAX_REGISTERED_COURSES = 5;
 
+    private Department[] departments;
+    private Student[] students;
+    private Teacher[] teachers;
+    private Course[] courses;
+
+
     private int departmentCount;
-    private int studentCount;
-    private int teacherCount;
-    private int courseCount;
+    //private int studentCount;
+    //private int teacherCount;
+    //private int courseCount;
 
     public SchoolManagementSystem(){
-        this.departments = new Department [MAX_DEPARTMENTS];
-        this.students = new Student [MAX_STUDENTS];
-        this.teachers = new  Teacher [MAX_TEACHERS];
-        this.courses = new Course [MAX_COURSES];
+        this.departments= new Department[MAX_DEPARTMENTS];
+        this.students = new Student[MAX_STUDENTS];
+        this.teachers = new  Teacher[MAX_TEACHERS];
+        this.courses = new Course[MAX_COURSES];
 
         this.departmentCount = 0;
-        this.studentCount = 0;
-        this.teacherCount = 0;
-        this.courseCount = 0;
+      //  this.studentCount = 0;
+        //this.teacherCount = 0;
+        //this.courseCount = 0;
 
     }
-
-
+// .equals (departmentid)
     /**
      * Find department
      * @param departementId the id of the department
      * @return  info on the departement
      */
     public Department findDepartment(String departementId){
-        for(Department departement : departements){
-            if (departement != null && departement.getId().equals(departementId) ){
+        for(Department departement : departments){
+            if (departement != null && departement.getId().equals(departementId)){
                 return departement;
             }
         }
         return null;
-
     }
 
     /**
@@ -54,16 +63,14 @@ public class SchoolManagementSystem {
      public void printTeacher(){
          for(Department department : departments){
              if(department != null){
-                 for (Teacher teacher : department.getTeacher){
+                 for (Teacher teacher : teachers){
                      if(teacher != null){
-                         System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s",
-                                 Teacher.getid(), Teacher getfname(), Teacher.getlname,Department.getdepartmentName);
+                         System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s", teacher.getId(), teacher.getFname(),
+                                 teacher.getLname(), teacher.getDepartment().getDepartmentName());
                      }
                  }
              }
          }
-     }
-
      }
 
     /***
@@ -71,26 +78,39 @@ public class SchoolManagementSystem {
      * @param teacherId the teacher id
      * @param courseId the course id
      */
-    public void modifyCourseTeacher(String teacherId, String courseId){
+    public void modifyCourseTeacher(String teacherId, String courseId) {
+        boolean teacherFound = false;
+        boolean courseFound = false;
+        for (Teacher teacher : teachers) {
+            if (teacher != null && teacher.getId().equals(teacherId)) {
+                System.out.println("Teacher modified.");
 
-        for(Department departement = departements){
-            if (departement != null){
-                System.out.println(departement);
+                teacherFound = true;
+                break;
             }
         }
-        System.out.println("Not found");
+        for (Course course : courses) {
+            if (course != null && course.getId().equals(courseId)) {
+                System.out.println("Course modified.");
+                courseFound = true;
+                break;
+            }
+        }
+        if (!teacherFound && !courseFound) {
+            System.out.println("Can't find teacher and course.");
+        }
     }
 
     /**
      * New department
      * @param departmentName name of the department
      */
-    public void addDepartement(String departmentName){
-        if(department < MAX_DEPARTMENTS){
-
+    public void addDepartment(String departmentName){
+        if(departmentCount < MAX_DEPARTMENTS){
+            System.out.println("w");
+        }
         }
 
-    }
 
     /**
      * print the student
@@ -98,7 +118,8 @@ public class SchoolManagementSystem {
     public void printStudent(){
         for(Student student : students){
             if(student != null){
-                System.out.printf("Student info: id: %s, name: %s, fname: %s, department: %s, number of course: %d, courses:  ");
+                System.out.printf("Student info: id: %s, name: %s, fname: %s, department name: %s, number of course: %d: ", student.getId(),
+                        student.getName(), student.getFname(), student.getDepartment().getDepartmentName(), student.getCourseNum());
             }
         }
 
@@ -136,13 +157,13 @@ public class SchoolManagementSystem {
     /**
      * Print department
      */
-    public void printDepartment(){
-        for(Department department: departments){
-            if (department != null){
-                System.out.printf("id: %s, department name : %s ", department.getid(), departement.getDepartment);
+    public void printDepartment() {
+        for (Department department : departments) {
+            if (department != null) {
+                System.out.printf("id: %s, department name : %s ", department.getId(), department.getDepartmentName());
             }
         }
-
+    }
 
 
 
@@ -158,7 +179,7 @@ public class SchoolManagementSystem {
 
     /***
      *  Find teacher
-     * @param name teacher's name
+
      */
     public void findTeacher( ){
 
