@@ -22,9 +22,9 @@ public class SchoolManagementSystem {
 
     @Getter
     private Department[] departments;
-    private Student[] students;
-    private Teacher[] teachers;
-    private Course[] courses;
+    private final Student[] students;
+    private final Teacher[] teachers;
+    private final Course[] courses;
 
    @Getter
     private int departmentCount;
@@ -187,12 +187,11 @@ public class SchoolManagementSystem {
         }
     }
 
-
     /**
      *
      * @param lname last name of the student
      * @param name name of the student
-     * @param id id of the stuent
+     * @param id id of the student
      */
     public void addStudent(String lname, String name, String id, Department department) {
         if (studentCount < MAX_STUDENTS){
@@ -200,7 +199,9 @@ public class SchoolManagementSystem {
             Student  newStudent = new Student(lname, name, id, department);
             studentCount++;
         }
-
+        else{
+            System.out.println("Student max has been reach.");
+        }
     }
 
     /***
