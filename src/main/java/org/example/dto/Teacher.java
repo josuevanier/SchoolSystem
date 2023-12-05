@@ -1,5 +1,8 @@
-package dto;
+package org.example.dto;
 
+import lombok.Getter;
+
+@Getter
 public class Teacher {
     private String lname;
     private String fname;

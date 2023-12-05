@@ -118,7 +118,7 @@ public class SchoolManagementSystem {
     public void addDepartment(String departmentName) {
         if (departmentCount < MAX_DEPARTMENTS) {
 
-            Department newDepartment = new Department( this, departmentName);
+            Department newDepartment = new Department(departmentName);
 
             departments[departmentCount++] = newDepartment;
             System.out.printf("Added department %s successfully %n", newDepartment);
@@ -194,11 +194,11 @@ public class SchoolManagementSystem {
      * @param name name of the student
      * @param id id of the stuent
      */
-    public void addStudent(String lname, String name, String id){
+    public void addStudent(String lname, String name, String id, Department department) {
         if (studentCount < MAX_STUDENTS){
 
-            Student  newStudent = new Student(this, lname , this, name, this, id );
-
+            Student  newStudent = new Student(lname, name, id, department);
+            studentCount++;
         }
 
     }
