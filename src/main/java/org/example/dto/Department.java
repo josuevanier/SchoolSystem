@@ -12,7 +12,6 @@ public class Department {
     private int nextId;
     private String departmentName;
     /**
-     *
      * @param id
      * @param departmentName
      */
