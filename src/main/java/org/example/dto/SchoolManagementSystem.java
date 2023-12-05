@@ -90,7 +90,7 @@ public class SchoolManagementSystem {
         boolean courseFound = false;
         for (Teacher teacher : teachers) {
             if (teacher != null && teacher.getId().equals(teacherId)) {
-                System.out.println("Teacher modified.");
+                System.out.println("Teacher modified");
 
                 teacherFound = true;
                 break;
@@ -114,13 +114,15 @@ public class SchoolManagementSystem {
      */
     public void addDepartment(String departmentName) {
         if (departmentCount < MAX_DEPARTMENTS) {
-            Department newPartement = new Department(this, departmentName);
 
-            departments[departmentCount++] = newPartement;
-            System.out.println("Department added " + newPartement);
+            Department newDepartment = new Department(this, departmentName);
+
+            departments[departmentCount++] = newDepartment;
+            System.out.printf("Added department %s successfully %n", newDepartment);
 
         } else {
             System.out.println(" Department is at his max");
+
         }
     }
 
@@ -174,8 +176,9 @@ public class SchoolManagementSystem {
         for (Department department : departments) {
             if (department != null) {
                 System.out.printf("id: %s, department name : %s ", department.getId(), department.getDepartmentName());
-                break;
+
             }
+
         }
     }
 
