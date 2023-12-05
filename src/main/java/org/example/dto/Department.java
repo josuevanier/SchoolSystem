@@ -9,24 +9,28 @@ import lombok.Getter;
  */
 public class Department {
     private String id;
-    private int nextId;
+
     private String departmentName;
+
+    private SchoolManagementSystem schoolManagementSystem;
+
     /**
-     * @param id
+     * @param schoolManagementSystem
      * @param departmentName
      */
 
-    public  Department (String id, String departmentName ){
-        this.id = String.format("DOO%d", nextId++);
+    public Department(SchoolManagementSystem schoolManagementSystem, String departmentName) {
+        this.id = String.format("DOO%d", schoolManagementSystem.getDepartmentCount() + 1);
         this.departmentName = departmentName;
 
     }
 
     /**
      * String method that return a string.
+     *
      * @return a String
      */
-    public String toString(){
-        return "";
+    public String toString() {
+        return String.format("Id is %s, Department name: %s", id, departmentName);
     }
 }
