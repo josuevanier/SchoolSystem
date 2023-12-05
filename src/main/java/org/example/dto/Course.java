@@ -1,16 +1,21 @@
-package dto;
+package org.example.dto;
+
+import lombok.Getter;
+
 
 /**
  * Contains the info a course
  * @author Joseph Josue Forestal
  */
+@Getter
 public class Course {
     private double credit;
     private String id;
     private Student[] students;
     private Teacher teacher;
     private  String courseName;
-    private int studentNUM;
+    private int studentNum;
+    private int nextId;
     private final static int MAX_ID_NUM = 0;
 
     /**
@@ -19,6 +24,13 @@ public class Course {
      * @param credit
      */
     public Course(String id, double credit, Department department){
+
+        this.id = String.format("C00%d", nextId++);
+        this.credit = credit;
+        this.courseName = courseName;
+        this.studentNum = studentNum;
+        this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
+
 
     }
 
