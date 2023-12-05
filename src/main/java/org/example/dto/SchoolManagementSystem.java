@@ -1,7 +1,7 @@
 package org.example.dto;
 
 import lombok.Getter;
-
+import lombok.ToString;
 
 
 /**
@@ -9,6 +9,7 @@ import lombok.Getter;
  * @author Joseph Josue Forestal
  */
 @Getter
+@ToString
 public class SchoolManagementSystem {
 
     private static final int MAX_DEPARTMENTS = 5;
@@ -19,12 +20,13 @@ public class SchoolManagementSystem {
     private static final int MAX_COURSES = 30;
     private static final int MAX_REGISTERED_COURSES = 5;
 
+    @Getter
     private Department[] departments;
     private Student[] students;
     private Teacher[] teachers;
     private Course[] courses;
 
-
+   @Getter
     private int departmentCount;
     //private int studentCount;
     //private int teacherCount;
@@ -35,6 +37,7 @@ public class SchoolManagementSystem {
         this.students = new Student[MAX_STUDENTS];
         this.teachers = new  Teacher[MAX_TEACHERS];
         this.courses = new Course[MAX_COURSES];
+
 
         this.departmentCount = 0;
       //  this.studentCount = 0;
@@ -52,6 +55,9 @@ public class SchoolManagementSystem {
         for(Department departement : departments){
             if (departement != null && departement.getId().equals(departementId)){
                 return departement;
+            }
+            else{
+                System.out.println("Department is null");
             }
         }
         return null;
@@ -106,11 +112,17 @@ public class SchoolManagementSystem {
      * New department
      * @param departmentName name of the department
      */
-    public void addDepartment(String departmentName){
-        if(departmentCount < MAX_DEPARTMENTS){
-            System.out.println("w");
+    public void addDepartment(String departmentName) {
+        if (departmentCount < MAX_DEPARTMENTS) {
+            Department newPartement = new Department(this, departmentName);
+
+            departments[departmentCount++] = newPartement;
+            System.out.println("Department added " + newPartement);
+
+        } else {
+            System.out.println(" Department is at his max");
         }
-        }
+    }
 
 
     /**
@@ -162,6 +174,7 @@ public class SchoolManagementSystem {
         for (Department department : departments) {
             if (department != null) {
                 System.out.printf("id: %s, department name : %s ", department.getId(), department.getDepartmentName());
+                break;
             }
         }
     }
@@ -180,7 +193,6 @@ public class SchoolManagementSystem {
 
     /***
      *  Find teacher
-
      */
     public void findTeacher( ){
 
