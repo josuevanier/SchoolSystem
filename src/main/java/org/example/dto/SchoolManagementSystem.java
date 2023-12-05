@@ -21,10 +21,10 @@ public class SchoolManagementSystem {
     private static final int MAX_REGISTERED_COURSES = 5;
 
     @Getter
-    private final Department[] departments;
-    private final Student[] students;
-    private final Teacher[] teachers;
-    private final Course[] courses;
+    private Department[] departments;
+    private Student[] students;
+    private Teacher[] teachers;
+    private Course[] courses;
 
    @Getter
     private int departmentCount;
@@ -197,7 +197,7 @@ public class SchoolManagementSystem {
     public void addStudent(String lname, String name, String id){
         if (studentCount < MAX_STUDENTS){
 
-            Student  newStudent = new Student(this, stude);
+            Student  newStudent = new Student(this, lname , this, name, this, id );
 
         }
 
