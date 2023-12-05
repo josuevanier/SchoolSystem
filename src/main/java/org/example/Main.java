@@ -11,9 +11,12 @@ public class Main {
         c1.addDepartment("JO");
 
         c1.printDepartment();
-        System.out.println(c1);
 
+        c1.printStudent();
 
+        c1.findDepartment("D001");
+
+        c1.findCourse("C001");
 
     }
 }

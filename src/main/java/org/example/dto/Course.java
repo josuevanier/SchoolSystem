@@ -30,8 +30,6 @@ public class Course {
         this.courseName = courseName;
         this.studentNum = studentNum;
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
-
-
     }
 
     /**
