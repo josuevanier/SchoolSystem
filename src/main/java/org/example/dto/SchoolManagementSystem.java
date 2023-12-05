@@ -12,6 +12,7 @@ import lombok.Getter;
 public class SchoolManagementSystem {
 
     private static final int MAX_DEPARTMENTS = 5;
+    @Getter
     private static final int MAX_STUDENTS = 200;
     private static final int MAX_TEACHERS= 20;
     @Getter
@@ -57,7 +58,7 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * print the teacher i guess
+     * print the teacher
      * no return type
      */
      public void printTeacher(){
