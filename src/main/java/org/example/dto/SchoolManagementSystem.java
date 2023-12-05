@@ -3,7 +3,7 @@ package org.example.dto;
 import lombok.Getter;
 import lombok.ToString;
 
-
+//3241
 /**
  * Contains  method of a school management
  * @author Joseph Josue Forestal
@@ -21,10 +21,10 @@ public class SchoolManagementSystem {
     private static final int MAX_REGISTERED_COURSES = 5;
 
     @Getter
-    private Department[] departments;
-    private Student[] students;
-    private Teacher[] teachers;
-    private Course[] courses;
+    private final Department[] departments;
+    private final Student[] students;
+    private final Teacher[] teachers;
+    private final Course[] courses;
 
    @Getter
     private int departmentCount;
@@ -118,7 +118,7 @@ public class SchoolManagementSystem {
     public void addDepartment(String departmentName) {
         if (departmentCount < MAX_DEPARTMENTS) {
 
-            Department newDepartment = new Department(this, departmentName);
+            Department newDepartment = new Department( this, departmentName);
 
             departments[departmentCount++] = newDepartment;
             System.out.printf("Added department %s successfully %n", newDepartment);
@@ -128,7 +128,6 @@ public class SchoolManagementSystem {
 
         }
     }
-
 
     /**
      * print the student
@@ -150,6 +149,9 @@ public class SchoolManagementSystem {
      * @param courseId id of the course
      */
     public void addCourse(String courseName, double credit, String courseId){
+        if(courseCount < MAX_STUDENTS){
+
+        }
 
     }
 
@@ -186,15 +188,16 @@ public class SchoolManagementSystem {
     }
 
 
-
     /**
-     * Add a student
-     * @param lname last name of student
-     * @param name first name of student
-     * @param id student id
+     *
+     * @param lname last name of the student
+     * @param name name of the student
+     * @param id id of the stuent
      */
     public void addStudent(String lname, String name, String id){
         if (studentCount < MAX_STUDENTS){
+
+            Student  newStudent = new Student(this, stude);
 
         }
 

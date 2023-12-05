@@ -15,7 +15,7 @@ public class Student {
     private int courseNum;
     private Department department;
     private Course[] courses;
-    private SchoolManagementSystem  schoolManagementSystem;
+    private int nextId = 1;
 
     /**
      * Contains the info of a student as an object
@@ -23,11 +23,11 @@ public class Student {
      * @param name last name of student
      * @param department student
      */
-    public Student(String fname, String name, Department department, SchoolManagementSystem schoolManagementSystem
-    ){
+    public Student(String fname, String name, Department department)
+    {
         this.fname = fname;
         this.name = name;
-        this.id = String.format("COO%d", schoolManagementSystem.getStudentCount());
+        this.id = String.format("COO%d", nextId++);
         this.courseNum = 0;
         this.department = department;
         this.courses = new Course[SchoolManagementSystem.getMAX_COURSES()];
