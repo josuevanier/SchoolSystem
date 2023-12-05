@@ -28,9 +28,12 @@ public class SchoolManagementSystem {
 
    @Getter
     private int departmentCount;
-    //private int studentCount;
-    //private int teacherCount;
-    //private int courseCount;
+   @Getter
+   private int studentCount;
+   @Getter
+    private int teacherCount;
+   @Getter
+    private int courseCount;
 
     public SchoolManagementSystem(){
         this.departments= new Department[MAX_DEPARTMENTS];
@@ -40,9 +43,9 @@ public class SchoolManagementSystem {
 
 
         this.departmentCount = 0;
-      //  this.studentCount = 0;
-        //this.teacherCount = 0;
-        //this.courseCount = 0;
+         this.studentCount = 0;
+         this.teacherCount = 0;
+        this.courseCount = 0;
 
     }
 // .equals (departmentid)
@@ -191,6 +194,9 @@ public class SchoolManagementSystem {
      * @param id student id
      */
     public void addStudent(String lname, String name, String id){
+        if (studentCount < MAX_STUDENTS){
+
+        }
 
     }
 
