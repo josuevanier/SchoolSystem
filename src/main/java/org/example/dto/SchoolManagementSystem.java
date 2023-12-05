@@ -194,12 +194,11 @@ public class SchoolManagementSystem {
      * @param id id of the student
      */
     public void addStudent(String lname, String name, String id, Department department) {
-        if (studentCount < MAX_STUDENTS){
+        if (studentCount < MAX_STUDENTS) {
 
-            Student  newStudent = new Student(lname, name, id, department);
-            studentCount++;
-        }
-        else{
+            Student newStudent = new Student(lname, name, id, department);
+            students[studentCount++] = newStudent;
+        } else {
             System.out.println("Student max has been reach.");
         }
     }
@@ -208,6 +207,7 @@ public class SchoolManagementSystem {
      *  Find teacher
      */
     public void findTeacher( ){
+
 
     }
 }
