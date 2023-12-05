@@ -17,6 +17,5 @@ public class Main {
         c1.findDepartment("D001");
 
         c1.findCourse("C001");
-
     }
 }

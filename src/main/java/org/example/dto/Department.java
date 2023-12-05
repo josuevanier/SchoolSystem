@@ -16,14 +16,12 @@ public class Department {
     private SchoolManagementSystem schoolManagementSystem;
 
     /**
-     * @param schoolManagementSystem schoolmanagement in order to get count
      * @param departmentName department name
      */
 
-    public Department(SchoolManagementSystem schoolManagementSystem, String departmentName) {
+    public Department( String departmentName) {
         this.id = String.format("DOO%d", nextId++);
         this.departmentName = departmentName;
-
     }
 
     /**
