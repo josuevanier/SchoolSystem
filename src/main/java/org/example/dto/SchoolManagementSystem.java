@@ -59,10 +59,9 @@ public class SchoolManagementSystem {
             if (departement != null && departement.getId().equals(departementId)){
                 return departement;
             }
-            else{
-                System.out.println("Department is null");
-            }
+
         }
+        System.out.println("Department was not found");
         return null;
     }
 
@@ -196,16 +195,19 @@ public class SchoolManagementSystem {
     public void addStudent(String lname, String name, String departmentId) {
         if (studentCount < MAX_STUDENTS) {
 
-
             Department department = findDepartment(departmentId);
 
             if(department != null) {
 
                 Student newStudent = new Student(lname, name,null, department);
                 students[studentCount++] = newStudent;
-                System.out.println("Student  added ");
+                System.out.println(newStudent);
             }
-        } else {
+            else{
+                System.out.println("Department was not found, enter proper department");
+            }
+        }
+        else {
             System.out.println("Student max has been reach.");
         }
     }
