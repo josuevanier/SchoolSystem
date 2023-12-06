@@ -15,8 +15,8 @@ public class Course {
     private Teacher teacher;
     private  String courseName;
     private int studentNum;
-    private int nextId;
-    private final static int MAX_ID_NUM = 0;
+    private int nextId = 1;
+
 
     /**
      * Constructor to create the object course
@@ -37,6 +37,7 @@ public class Course {
      * @return a String
      */
     public String toString(){
-        return "";
+        return String.format("Course{id is %s, course name : %s, course credit : %f, Course teacher %s}",
+                id, courseName, credit, teacher);
     }
 }
