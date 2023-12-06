@@ -23,8 +23,7 @@ public class Student {
      * @param name last name of student
      * @param department student
      */
-    public Student(String fname, String name, String id, Department department)
-    {
+    public Student(String fname, String name, String id, Department department){
         this.fname = fname;
         this.name = name;
         this.id = String.format("COO%d", nextId++);
