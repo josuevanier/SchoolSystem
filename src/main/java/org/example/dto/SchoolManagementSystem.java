@@ -177,6 +177,9 @@ public class SchoolManagementSystem {
         System.out.println("Course is not found !");
         return null;
     }
+    public  Course addCourse(){
+        return null;
+    }
 
     /**
      * Print department
