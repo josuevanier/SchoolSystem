@@ -201,7 +201,7 @@ public class SchoolManagementSystem {
 
             if(department != null) {
 
-                Student newStudent = new Student(lname, name,department);
+                Student newStudent = new Student(lname, name,null, department);
                 students[studentCount++] = newStudent;
                 System.out.println("Student  added ");
             }
