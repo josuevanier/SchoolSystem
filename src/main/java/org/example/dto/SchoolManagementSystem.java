@@ -124,7 +124,6 @@ public class SchoolManagementSystem {
 
         } else {
             System.out.println(" Department is at his max");
-
         }
     }
 
@@ -170,6 +169,12 @@ public class SchoolManagementSystem {
      * @return
      */
     public Course findCourse(String courseName){
+        for(Course course : courses){
+            if(course != null && course.getCourseName().equals(courseName)){
+                System.out.println(course.toString());
+            }
+        }
+        System.out.println("Course is not found !");
         return null;
     }
 
