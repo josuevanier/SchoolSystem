@@ -12,12 +12,12 @@ import java.util.Arrays;
 public class Student {
     private String fname;
     private String name;
-    private String id;
+    private String studentId;
 
     private int courseNum;
     private Department department;
     private Course[] courses;
-    private static int nextId = 1;
+    private  int nextId = 1;
 
     /**
      * Contains the info of a student as an object
@@ -28,7 +28,7 @@ public class Student {
     public Student(String fname, String name, String id, Department department){
         this.fname = fname;
         this.name = name;
-        this.id = String.format("SOO%d", nextId++);
+        this.studentId = String.format("SOO%d", nextId++);
         this.courseNum = 0;
         this.department = department;
         this.courses = new Course[SchoolManagementSystem.getMAX_COURSES()];

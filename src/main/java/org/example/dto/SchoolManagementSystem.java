@@ -161,7 +161,7 @@ public class SchoolManagementSystem {
      */
     public void registerCourse(String studentId, String courseId){
 
-        if(findCourse(courseId).equals(null) &&  ){
+        if(findCourse(courseId).equals(null && findStudent(studentId))   ){
 
         }
 
@@ -226,7 +226,8 @@ public class SchoolManagementSystem {
 
     public void findStudent(String id){
         for(Student student : students){
-            if(student.getId() != null){
+            if(student != null && student.getId().equals(id)){
+                System.out.println(student.toString());
             }
         }
     }
