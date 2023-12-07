@@ -15,7 +15,7 @@ public class Course {
     private Teacher teacher;
     private  String courseName;
     private int studentNum;
-    private int nextId = 1;
+    private static int nextId = 1;
 
 
     /**

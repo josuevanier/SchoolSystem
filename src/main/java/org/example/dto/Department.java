@@ -10,9 +10,8 @@ import lombok.Getter;
 @Getter
 public class Department {
     private String id;
-
     private String departmentName;
-    private int nextId = 1;
+    private static int nextId = 1;
     private SchoolManagementSystem schoolManagementSystem;
 
     /**

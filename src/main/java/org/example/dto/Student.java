@@ -2,6 +2,8 @@ package org.example.dto;
 
 import lombok.Getter;
 
+import java.util.Arrays;
+
 /**
  * Contains the info of a student
  * @author Joseph Josue Forestal
@@ -37,6 +39,7 @@ public class Student {
      * @return a String
      */
     public String toString(){
-        return "";
+        return String.format("Student{id = %s, fname %s, name %s, department %s, course num %d , courses %s }",
+                id, fname, name, department, courseNum, Arrays.toString(courses));
     }
 }
