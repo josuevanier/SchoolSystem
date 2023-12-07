@@ -15,6 +15,7 @@ public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENTS = 5;
     @Getter
     private static final int MAX_STUDENTS = 200;
+    @Getter
     private static final int MAX_TEACHERS= 20;
     @Getter
     private static final int MAX_COURSES = 30;
@@ -160,6 +161,9 @@ public class SchoolManagementSystem {
      */
     public void registerCourse(String studentId, String courseId){
 
+        if(findCourse(courseId).equals(null) &&  ){
+
+        }
 
     }
 
@@ -220,11 +224,17 @@ public class SchoolManagementSystem {
         }
     }
 
+    public void findStudent(String id){
+        for(Student student : students){
+            if(student.getId() != null){
+            }
+        }
+    }
+
     /***
      *  Find teacher
      */
     public void findTeacher( ){
-
 
     }
 }
