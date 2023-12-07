@@ -224,9 +224,9 @@ public class SchoolManagementSystem {
         }
     }
 
-    public void findStudent(String id){
+    public void findStudent(String StudentId){
         for(Student student : students){
-            if(student != null && student.getId().equals(id)){
+            if(student != null && student.getStudentId().equals(StudentId)){
                 System.out.println(student.toString());
             }
         }
