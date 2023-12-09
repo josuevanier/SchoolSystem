@@ -134,7 +134,7 @@ public class SchoolManagementSystem {
     public void printStudent(){
         for(Student student : students){
             if(student != null){
-                System.out.printf("Student info: id: %s, name: %s, fname: %s, department name: %s, number of course: %d: ", student.getId(),
+                System.out.printf("Student info: id: %s, name: %s, fname: %s, department name: %s, number of course: %d: ", student.getStudentId(),
                         student.getName(), student.getFname(), student.getDepartment().getDepartmentName(), student.getCourseNum());
             }
         }
@@ -145,10 +145,11 @@ public class SchoolManagementSystem {
      * add course
      * @param courseName name of the course
      * @param credit credits of the course
-     * @param courseId id of the course
+     * @param departmentId id of the course
      */
-    public void addCourse(String courseName, double credit, String courseId){
+    public void addCourse(String courseName, double credit, String departmentId){
         if(courseCount < MAX_STUDENTS){
+            Course newCourse = new Course(courseName, credit, findDepartment(departmentId) );
 
         }
 
@@ -160,8 +161,14 @@ public class SchoolManagementSystem {
      * @param courseId
      */
     public void registerCourse(String studentId, String courseId){
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
 
-        if(findCourse(courseId).equals(null && findStudent(studentId))   ){
+        if(student != null && course != null){
+            if(student.getCourseNum() < MAX_REGISTERED_COURSES){
+                student.
+
+            }
 
         }
 
@@ -224,12 +231,15 @@ public class SchoolManagementSystem {
         }
     }
 
-    public void findStudent(String StudentId){
+    public Student findStudent(String StudentId){
         for(Student student : students){
             if(student != null && student.getStudentId().equals(StudentId)){
                 System.out.println(student.toString());
+                return student;
             }
         }
+        System.out.println("Student can't be found!");
+        return null;
     }
 
     /***
