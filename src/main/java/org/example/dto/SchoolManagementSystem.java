@@ -264,15 +264,16 @@ public class SchoolManagementSystem {
 
     }
 
-    /***
-     * Check if student has registered for a course
+    /**
+     * check if student has registered for this course
+     * @param studentId student Id
+     * @param courseId course Id
      * @return true or false
      */
-    public boolean hasRegisteredForthisCourse(){
+    public boolean hasRegisteredForThisCourse(String studentId, String courseId){
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
 
-        for(Course course : courses){
-            return true;
+        return true;
         }
-        return false;
-    }
 }
