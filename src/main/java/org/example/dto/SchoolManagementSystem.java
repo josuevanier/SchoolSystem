@@ -21,7 +21,8 @@ public class SchoolManagementSystem {
     private static final int MAX_TEACHERS= 20;
     @Getter
     private static final int MAX_COURSES = 30;
-    private static final int MAX_REGISTERED_COURSES = 5;
+    @Getter
+    private static final int MAX_REGISTERED_COURSES = 7;
 
     @Getter
     private Department[] departments;
@@ -60,7 +61,7 @@ public class SchoolManagementSystem {
     public Department findDepartment(String departementId){
         for(Department departement : departments){
             if (departement != null && departement.getId().equals(departementId)){
-                System.out.println(departement);
+                return departement;
             }
         }
         System.out.println("Department was not found");
@@ -169,14 +170,19 @@ public class SchoolManagementSystem {
         Student student = findStudent(studentId);
         Course course = findCourse(courseId);
 
-        if((student != null) || ((student.equals("") && (course != null)) || course.equals(""))){
-            if(student.getCourseNum() < MAX_REGISTERED_COURSES){
+        if(student != null  && course != null) {
+            if (student.getCourseNum() < MAX_REGISTERED_COURSES) {
+                student.getCourses()[student.getCourseNum()] = course;
 
-
+                student.setCourseNum(student.getCourseNum() + 1);
             }
-
+            else{
+                System.out.println("Max registered Course");
+            }
         }
-
+        else{
+            System.out.println("Student or department was not found input again.");
+        }
     }
 
     /**
