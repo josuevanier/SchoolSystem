@@ -1,14 +1,18 @@
 package org.example.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Contains the info of a student
  * @author Joseph Josue Forestal
  */
 @Getter
+@Setter
 public class Student {
     private String fname;
     private String name;
@@ -17,7 +21,7 @@ public class Student {
     private int courseNum;
     private Department department;
     private Course[] courses;
-    private  int nextId = 1;
+    private int nextId = 1;
 
     /**
      * Contains the info of a student as an object
@@ -40,6 +44,7 @@ public class Student {
      */
     public String toString(){
         return String.format("Student{id = %s, fname %s, name %s, department %s, course num %d , courses %s }",
-                id, fname, name, department, courseNum, Arrays.toString(courses));
+                studentId, fname, name, department, courseNum, Arrays.toString(courses));
     }
+
 }
