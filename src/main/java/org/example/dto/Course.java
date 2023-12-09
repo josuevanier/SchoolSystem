@@ -27,7 +27,7 @@ public class Course {
 
         this.id = String.format("COO%d", nextId++);
         this.credit = credit;
-        this.courseName = "";
+        this.courseName = courseName;
         this.studentNum = 1;
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
     }
