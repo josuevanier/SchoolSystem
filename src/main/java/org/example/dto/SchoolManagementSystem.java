@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.sql.SQLOutput;
+
 //3241
 /**
  * Contains  method of a school management
@@ -172,9 +174,13 @@ public class SchoolManagementSystem {
 
         if(student != null  && course != null) {
             if (student.getCourseNum() < MAX_REGISTERED_COURSES) {
-                student.getCourses()[student.getCourseNum()] = course;
+                if(student.getCourses() == null){
+                    student.setCourses(new Course[MAX_REGISTERED_COURSES]);
+                }
 
+                student.getCourses()[student.getCourseNum()] = course;
                 student.setCourseNum(student.getCourseNum() + 1);
+                System.out.printf("Student %n registered for course %s%n", studentId, course.getCourseName());
             }
             else{
                 System.out.println("Max registered Course");
@@ -187,12 +193,12 @@ public class SchoolManagementSystem {
 
     /**
      * find the course
-     * @param courseName based on the course name
+     * @param courseId based on the course Id
      * @return
      */
-    public Course findCourse(String courseName){
+    public Course findCourse(String courseId){
         for(Course course : courses){
-            if(course != null && course.getCourseName().equals(courseName)){
+            if(courseId != null && course.getId().equals(courseId)){
 
                 return course;
             }
@@ -254,7 +260,19 @@ public class SchoolManagementSystem {
     /***
      *  Find teacher
      */
-    public void findTeacher( ){
+    public void findTeacher(){
 
+    }
+
+    /***
+     * Check if student has registered for a course
+     * @return true or false
+     */
+    public boolean hasRegisteredForthisCourse(){
+
+        for(Course course : courses){
+            return true;
+        }
+        return false;
     }
 }
