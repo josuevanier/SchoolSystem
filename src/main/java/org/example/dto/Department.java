@@ -11,7 +11,7 @@ import lombok.Getter;
 public class Department {
     private String id;
     private String departmentName;
-    private static int nextId = 1;
+    private  int nextId = 1;
     private SchoolManagementSystem schoolManagementSystem;
 
     /**
