@@ -1,6 +1,7 @@
 package org.example.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 //3241
@@ -10,6 +11,7 @@ import lombok.ToString;
  */
 @Getter
 @ToString
+@Setter
 public class SchoolManagementSystem {
 
     private static final int MAX_DEPARTMENTS = 5;
@@ -167,7 +169,7 @@ public class SchoolManagementSystem {
         Student student = findStudent(studentId);
         Course course = findCourse(courseId);
 
-        if(student != null && course != null){
+        if((student != null) || ((student.equals("") && (course != null)) || course.equals(""))){
             if(student.getCourseNum() < MAX_REGISTERED_COURSES){
 
 
@@ -185,21 +187,11 @@ public class SchoolManagementSystem {
     public Course findCourse(String courseName){
         for(Course course : courses){
             if(course != null && course.getCourseName().equals(courseName)){
-                System.out.println(course.toString());
+
+                return course;
             }
         }
         System.out.println("Course is not found !");
-        return null;
-    }
-
-    /**
-     *
-     * @param courseName
-     * @param credit
-     * @param departmentId
-     * @return
-     */
-    public  Course addCourse(String courseName, double credit, String departmentId){
         return null;
     }
 
