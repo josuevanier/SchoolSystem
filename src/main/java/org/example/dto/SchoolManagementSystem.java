@@ -270,10 +270,15 @@ public class SchoolManagementSystem {
      * @param courseId course Id
      * @return true or false
      */
-    public boolean hasRegisteredForThisCourse(String studentId, String courseId){
+    public boolean hasRegisteredForThisCourse(String studentId, String courseId) {
         Student student = findStudent(studentId);
         Course course = findCourse(courseId);
 
-        return true;
+        if (student != null && course != null) {
+            for (Course registeredCourse : student.getCourses()) {
+                if(registeredCourse != null && student.getStudentId().equals(studentId))
+                return true;
+            }
         }
+    }
 }
