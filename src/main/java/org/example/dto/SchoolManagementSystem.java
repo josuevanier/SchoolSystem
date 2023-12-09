@@ -198,7 +198,7 @@ public class SchoolManagementSystem {
      */
     public Course findCourse(String courseId){
         for(Course course : courses){
-            if((courseId != null) || course.getId() != null && course.getId().equals(courseId)){
+            if((courseId != null) && course.getId() != null && course.getId().equals(courseId)){
 
                 return course;
             }else if(course == null){
@@ -275,7 +275,6 @@ public class SchoolManagementSystem {
     public boolean hasRegisteredForThisCourse(String studentId, String courseId) {
         Student student = findStudent(studentId);
         Course course = findCourse(courseId);
-
         if (student != null && course != null) {
             for (Course registeredCourse : student.getCourses()) {
                 if (registeredCourse != null && registeredCourse.getId().equals(courseId)) {
@@ -283,10 +282,7 @@ public class SchoolManagementSystem {
                     return true;
                 }
             }
-        }else if(course == null || student == null){
-            System.out.println("Course or student was not found \'Make sure you entered right id\'");
         }
-
         System.out.println("false");
         return false;
     }

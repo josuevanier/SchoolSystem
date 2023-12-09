@@ -30,10 +30,11 @@ public class Main {
         System.out.println(c1.findCourse("COO1"));
 
         c1.findStudent("SOO1");
+
         c1.addCourse("Arrays", 2.0,"DOO1");
 
 
-        c1.hasRegisteredForThisCourse("SOO1", "COO4");
+        c1.hasRegisteredForThisCourse("SOO1", "COO2");
 
     }
 }
