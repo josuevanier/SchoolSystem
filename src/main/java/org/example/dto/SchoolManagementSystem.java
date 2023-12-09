@@ -277,8 +277,12 @@ public class SchoolManagementSystem {
         if (student != null && course != null) {
             for (Course registeredCourse : student.getCourses()) {
                 if(registeredCourse != null && student.getStudentId().equals(studentId))
-                return true;
+                    System.out.println("true");
+                    return true;
             }
         }
+        System.out.println("false");
+        return false;
+
     }
 }
