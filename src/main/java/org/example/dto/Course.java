@@ -25,10 +25,10 @@ public class Course {
      */
     public Course(String id, double credit, Department department){
 
-        this.id = String.format("C00%d", nextId++);
+        this.id = String.format("COO%d", nextId++);
         this.credit = credit;
         this.courseName = "";
-        this.studentNum = 0;
+        this.studentNum = 1;
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
     }
 
