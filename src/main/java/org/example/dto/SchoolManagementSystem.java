@@ -58,9 +58,8 @@ public class SchoolManagementSystem {
     public Department findDepartment(String departementId){
         for(Department departement : departments){
             if (departement != null && departement.getId().equals(departementId)){
-                return departement;
+                System.out.println(departement);
             }
-
         }
         System.out.println("Department was not found");
         return null;
@@ -151,8 +150,12 @@ public class SchoolManagementSystem {
         if(courseCount < MAX_STUDENTS){
             Course newCourse = new Course(courseName, credit, findDepartment(departmentId) );
 
+            courses[courseCount++] = newCourse;
+            System.out.println(newCourse.toString());
         }
-
+        else {
+            System.out.println("Course has reached its limits !");
+        }
     }
 
     /**
@@ -166,7 +169,7 @@ public class SchoolManagementSystem {
 
         if(student != null && course != null){
             if(student.getCourseNum() < MAX_REGISTERED_COURSES){
-                student.
+
 
             }
 
@@ -188,7 +191,15 @@ public class SchoolManagementSystem {
         System.out.println("Course is not found !");
         return null;
     }
-    public  Course addCourse(){
+
+    /**
+     *
+     * @param courseName
+     * @param credit
+     * @param departmentId
+     * @return
+     */
+    public  Course addCourse(String courseName, double credit, String departmentId){
         return null;
     }
 
