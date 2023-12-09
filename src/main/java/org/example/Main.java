@@ -33,7 +33,7 @@ public class Main {
         c1.addCourse("Arrays", 2.0,"DOO1");
 
 
-        c1.hasRegisteredForThisCourse("SOO1", "COO3");
+        c1.hasRegisteredForThisCourse("SOO1", "COO4");
 
     }
 }
