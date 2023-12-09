@@ -11,7 +11,7 @@ public class Main {
 
         c1.addDepartment("Computer science");
 
-       // c1.printDepartment();
+       //c1.printDepartment();
 
         //c1.printStudent();
 
@@ -30,6 +30,8 @@ public class Main {
         System.out.println(c1.findCourse("COO1"));
 
         c1.findStudent("SOO1");
+
+        c1.hasRegisteredForThisCourse("SOO1", "COO1");
 
     }
 }
