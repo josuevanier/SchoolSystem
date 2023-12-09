@@ -20,10 +20,10 @@ public class Course {
 
     /**
      * Constructor to create the object course
-     * @param id
+     * @param courseName the courseName of the cours
      * @param credit
      */
-    public Course(String id, double credit, Department department){
+    public Course(String courseName, double credit, Department department){
 
         this.id = String.format("COO%d", nextId++);
         this.credit = credit;
