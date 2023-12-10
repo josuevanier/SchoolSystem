@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+
 
 /**
  * Contains the info of a student
@@ -25,26 +24,29 @@ public class Student {
 
     /**
      * Contains the info of a student as an object
-     * @param fname fname of student
-     * @param name last name of student
+     *
+     * @param fname      fname of student
+     * @param name       last name of student
      * @param department student
      */
-    public Student(String fname, String name, String id, Department department){
+    public Student(String fname, String name, Department department) {
         this.fname = fname;
         this.name = name;
         this.studentId = String.format("SOO%d", nextId++);
         this.courseNum = 0;
         this.department = department;
-        this.courses = new Course[SchoolManagementSystem.getMAX_COURSES()];
+        this.courses = new Course[SchoolManagementSystem.getMAX_REGISTERED_COURSES()];
     }
 
-    /**
-     * String method that return a string.
-     * @return a String
-     */
-    public String toString(){
-        return String.format("Student{id = %s, fname %s, name %s, department %s, course num %d , courses %s }",
-                studentId, fname, name, department, courseNum, Arrays.toString(courses));
+    @Override
+    public String toString() {
+        String courseArray = "";
+        for (Course course : courses) {
+            if (course != null) {
+                courseArray += course.getCourseName() + ",";
+            }
+        }
+        return String.format("Student{ Id : %s | First name : %s | Last name : %s | Number of course : %d | Department : %s%n | courses : %s }\n",
+                studentId, fname, name, courseNum, department.getDepartmentName(), courseArray);
     }
-
 }
