@@ -282,8 +282,9 @@ public class SchoolManagementSystem {
             else{
                 System.out.println("Department can't be found");
             }
+        }else {
+            System.out.printf("No more teachers can't be added. Max teachers: %d", getMAX_TEACHERS());
         }
-        System.out.printf("No more teachers can't be added. Max teachers: %d", getMAX_TEACHERS());
     }
     /**
      * Print the courses
