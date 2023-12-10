@@ -252,8 +252,10 @@ public class SchoolManagementSystem {
         return null;
     }
 
-    /***
-     *  Find teacher
+    /**
+     * Find the teacher
+     * @param teacherId teacher is id
+     * @return teacher
      */
     public Teacher findTeacher(String teacherId) {
         for (Teacher teacher : teachers) {
