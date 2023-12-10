@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.SQLOutput;
 
 //3241
 /**
@@ -156,7 +155,7 @@ public class SchoolManagementSystem {
     /**
      * Register the course
      * @param studentId student id
-     * @param courseId
+     * @param courseId course id
      */
     public void registerCourse(String studentId, String courseId) {
         Student student = findStudent(studentId);
@@ -185,7 +184,7 @@ public class SchoolManagementSystem {
     }
     /**
      * find the course
-     * @param courseId based on the course Id
+     * @param courseId based on the course id
      * @return
      */
     public Course findCourse(String courseId){
@@ -272,11 +271,20 @@ public class SchoolManagementSystem {
      * @param fname Teacher's first name
      * @param departmentId department id
      */
-    public void addTeacher(String lname, String fname, String departmentId){
-
-
+    public void addTeacher(String lname, String fname, String departmentId) {
+        if (teacherCount < MAX_TEACHERS) {
+            Department department = findDepartment(departmentId);
+            if (department != null) {
+                Teacher newTeacher = new Teacher(lname, fname, department);
+                teachers[teacherCount++] = newTeacher;
+                System.out.println(newTeacher);
+            }
+            else{
+                System.out.println("Department can't be found");
+            }
+        }
+        System.out.printf("No more teachers can't be added. Max teachers: %d", getMAX_TEACHERS());
     }
-
     /**
      * Print the courses
      */
