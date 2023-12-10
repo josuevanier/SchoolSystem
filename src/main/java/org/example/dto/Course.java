@@ -32,12 +32,10 @@ public class Course {
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
     }
 
-    /**
-     * String method that return a string
-     * @return a String
-     */
-    public String toString(){
-        return String.format("Course{id is %s, course name : %s, course credit : %f, Course teacher %s}",
-                id, courseName, credit, teacher);
+
+    public String toString() {
+        return String.format("Course{Id : %s |Credit: %f |course name : %s | Course teacher  : %s}\n",
+                id, credit, courseName, (teacher != null) ? teacher.getName() : "No teacher for this course");
     }
 }
+
