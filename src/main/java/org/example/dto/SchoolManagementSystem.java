@@ -270,6 +270,17 @@ public class SchoolManagementSystem {
     }
 
     /**
+     * Print the courses
+     */
+    public void printCourse(){
+        for(Course course : courses){
+            if(course != null){
+                System.out.println(course);
+            }
+        }
+    }
+
+    /**
      * check if student has registered for this course
      * @param studentId student Id
      * @param courseId course Id
