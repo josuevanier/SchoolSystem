@@ -77,7 +77,7 @@ public class SchoolManagementSystem {
      public void printTeacher(){
      for (Teacher teacher : teachers){
          if(teacher != null){
-             System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s", teacher.getId(), teacher.getFname(),
+             System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s", teacher.getTeacherId(), teacher.getFname(),
                      teacher.getLname(), teacher.getDepartment().getDepartmentName());
          }
      }
@@ -89,24 +89,22 @@ public class SchoolManagementSystem {
      * @param courseId the course id
      */
     public void modifyCourseTeacher(String teacherId, String courseId) {
-        boolean teacherFound = false;
-        boolean courseFound = false;
-        for (Teacher teacher : teachers) {
-            if (teacher != null && teacher.getId().equals(teacherId)) {
-                System.out.println("Teacher modified");
 
-                teacherFound = true;
+        Teacher teacherFound = findTeacher(teacherId);
+        Course courseFound = findCourse(courseId);
+        for (Teacher teacher : teachers) {
+            if (teacher != null && teacher.getTeacherId().equals(teacherId)) {
+                System.out.println("Teacher modified");
                 break;
             }
         }
         for (Course course : courses) {
             if (course != null && course.getId().equals(courseId)) {
                 System.out.println("Course modified.");
-                courseFound = true;
                 break;
             }
         }
-        if (!teacherFound && !courseFound) {
+        if (teacherFound == null && courseFound == null) {
             System.out.println("Can't find teacher and course.");
         }
     }
@@ -138,7 +136,6 @@ public class SchoolManagementSystem {
                         student.getName(), student.getFname(), student.getDepartment().getDepartmentName(), student.getCourseNum());
             }
         }
-
     }
 
     /**
@@ -164,11 +161,11 @@ public class SchoolManagementSystem {
      * @param studentId student id
      * @param courseId
      */
-    public void registerCourse(String studentId, String courseId){
+    public void registerCourse(String studentId, String courseId) {
         Student student = findStudent(studentId);
         Course course = findCourse(courseId);
 
-        if(student != null  && course != null) {
+        if (student != null && course != null) {
             if (!hasRegisteredForThisCourse(studentId, courseId)) {
                 if (student.getCourseNum() < MAX_REGISTERED_COURSES) {
                     if (student.getCourses() == null) {
@@ -179,14 +176,16 @@ public class SchoolManagementSystem {
                     student.setCourseNum(student.getCourseNum() + 1);
                     System.out.printf(course.toString());
 
-                }else{
-                        System.out.println("Max registered Course");
-                    }
                 } else {
-                    System.out.println("Student or department was not found input again.");
+                    System.out.println("Max registered Course");
                 }
-            }
+            } else {
+                System.out.printf("Student %s is already in the course %s", student.getStudentId(), course.getCourseName());
+             }
+                } else {
+                    System.out.println("Student or department was not found : input again");
         }
+    }
     /**
      * find the course
      * @param courseId based on the course Id
@@ -212,9 +211,7 @@ public class SchoolManagementSystem {
         for (Department department : departments) {
             if (department != null) {
                 System.out.printf("id: %s, department name : %s ", department.getId(), department.getDepartmentName());
-
             }
-
         }
     }
 
@@ -244,9 +241,9 @@ public class SchoolManagementSystem {
         }
     }
 
-    public Student findStudent(String StudentId){
+    public Student findStudent(String studentId){
         for(Student student : students){
-            if(student != null && student.getStudentId().equals(StudentId)){
+            if(student != null && student.getStudentId().equals(studentId)){
                 System.out.println(student);
                 return student;
             }
@@ -258,8 +255,16 @@ public class SchoolManagementSystem {
     /***
      *  Find teacher
      */
-    public void findTeacher(){
+    public Teacher findTeacher(String teacherId) {
+        for (Teacher teacher : teachers) {
+            if (teacher != null && teacher.getTeacherId().equals(teacherId)) {
 
+                System.out.println(teacher);
+                return teacher;
+            }
+        }
+        System.out.println("Teacher can't be found !");
+        return null;
     }
 
     /**
@@ -274,12 +279,11 @@ public class SchoolManagementSystem {
         if (student != null && course != null) {
             for (Course registeredCourse : student.getCourses()) {
                 if (registeredCourse != null && registeredCourse.getId().equals(courseId)) {
-                    System.out.println("true");
+
                     return true;
                 }
             }
         }
-        System.out.println("false");
         return false;
     }
 }
