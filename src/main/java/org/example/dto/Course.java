@@ -2,7 +2,6 @@ package org.example.dto;
 
 import lombok.Getter;
 
-
 /**
  * Contains the info a course
  * @author Joseph Josue Forestal
@@ -17,7 +16,6 @@ public class Course {
     private int studentNum;
     private static int nextId = 1;
 
-
     /**
      * Constructor to create the object course
      * @param courseName the courseName of the cours
@@ -31,8 +29,7 @@ public class Course {
         this.studentNum = 1;
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
     }
-
-
+    @Override
     public String toString() {
         return String.format("Course{Id : %s |Credit: %f |course name : %s | Course teacher  : %s}\n",
                 id, credit, courseName, (teacher != null) ? teacher.getName() : "No teacher for this course");
