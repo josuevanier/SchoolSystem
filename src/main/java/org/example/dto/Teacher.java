@@ -8,7 +8,7 @@ public class Teacher {
     private String lname;
     private String fname;
     private Department department;
-    private String id;
+    private String teacherId;
     private  int  nextId = 1;
 
     public Teacher(String lname, String fname, Department department){
@@ -16,12 +16,12 @@ public class Teacher {
         this.lname = lname;
         this.fname = fname;
         this.department = department;
-        this.id = String.format("TOO%d", nextId++);
+        this.teacherId = String.format("TOO%d", nextId++);
     }
 
     /**
-     *
-     * @return
+     * Get  teacher's name
+     * @return fname and lname .
      */
     public String getName(){
         return fname + " " + lname;
