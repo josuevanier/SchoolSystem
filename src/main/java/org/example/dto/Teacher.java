@@ -1,9 +1,9 @@
 package org.example.dto;
 
-import lombok.Getter;import lombok.ToString;
+import lombok.Getter;
 
 @Getter
-@ToString
+
 public class Teacher {
     private String lname;
     private String fname;
@@ -25,5 +25,10 @@ public class Teacher {
      */
     public String getName(){
         return fname + " " + lname;
+    }
+    @Override
+    public String toString(){
+        return String.format("Teacher{Id: %s | Last name: %s | First name: %s | Department: %s | }",
+                teacherId, lname, fname, department.getDepartmentName());
     }
 }
