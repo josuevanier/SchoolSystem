@@ -115,14 +115,11 @@ public class SchoolManagementSystem {
      */
     public void addDepartment(String departmentName) {
         if (departmentCount < MAX_DEPARTMENTS) {
-
             Department newDepartment = new Department(departmentName);
-
             departments[departmentCount++] = newDepartment;
             System.out.printf("Added department %s successfully %n", newDepartment);
-
         } else {
-            System.out.println(" Department is at his max");
+            System.out.println(" Department is at it's max");
         }
     }
 
@@ -267,6 +264,17 @@ public class SchoolManagementSystem {
         }
         System.out.println("Teacher can't be found !");
         return null;
+    }
+
+    /**
+     *
+     * @param lname Teacher's last name
+     * @param fname Teacher's first name
+     * @param departmentId department id
+     */
+    public void addTeacher(String lname, String fname, String departmentId){
+
+
     }
 
     /**
