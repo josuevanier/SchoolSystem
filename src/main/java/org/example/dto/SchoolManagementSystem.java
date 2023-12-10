@@ -75,17 +75,13 @@ public class SchoolManagementSystem {
      * no return type
      */
      public void printTeacher(){
-         for(Department department : departments){
-             if(department != null){
-                 for (Teacher teacher : teachers){
-                     if(teacher != null){
-                         System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s", teacher.getId(), teacher.getFname(),
-                                 teacher.getLname(), teacher.getDepartment().getDepartmentName());
-                     }
-                 }
-             }
+     for (Teacher teacher : teachers){
+         if(teacher != null){
+             System.out.printf("Teacher's id: %s, first name : %s, last name: %s, department : %s", teacher.getId(), teacher.getFname(),
+                     teacher.getLname(), teacher.getDepartment().getDepartmentName());
          }
      }
+ }
 
     /***
      * modify course and the teacher
@@ -156,7 +152,7 @@ public class SchoolManagementSystem {
             Course newCourse = new Course(courseName, credit, findDepartment(departmentId) );
 
             courses[courseCount++] = newCourse;
-            System.out.println(newCourse.toString());
+            System.out.println(newCourse);
         }
         else {
             System.out.println("Course has reached its limits !");
@@ -180,7 +176,7 @@ public class SchoolManagementSystem {
 
                 student.getCourses()[student.getCourseNum()] = course;
                 student.setCourseNum(student.getCourseNum() + 1);
-                System.out.printf("Student %n registered for course %s%n", studentId, course.getCourseName());
+                System.out.printf("Student %s registered for course %s%n",student.getStudentId() , course.getCourseName());
             }
             else{
                 System.out.println("Max registered Course");
@@ -235,7 +231,7 @@ public class SchoolManagementSystem {
 
             if(department != null) {
 
-                Student newStudent = new Student(lname, name,null, department);
+                Student newStudent = new Student(lname, name, department);
                 students[studentCount++] = newStudent;
                 System.out.println(newStudent);
             }
@@ -251,7 +247,7 @@ public class SchoolManagementSystem {
     public Student findStudent(String StudentId){
         for(Student student : students){
             if(student != null && student.getStudentId().equals(StudentId)){
-                System.out.println(student.toString());
+                System.out.println(student);
                 return student;
             }
         }
