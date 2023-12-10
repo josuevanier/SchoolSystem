@@ -169,24 +169,24 @@ public class SchoolManagementSystem {
         Course course = findCourse(courseId);
 
         if(student != null  && course != null) {
-            if (student.getCourseNum() < MAX_REGISTERED_COURSES) {
-                if(student.getCourses() == null){
-                    student.setCourses(new Course[MAX_REGISTERED_COURSES]);
+            if (!hasRegisteredForThisCourse(studentId, courseId)) {
+                if (student.getCourseNum() < MAX_REGISTERED_COURSES) {
+                    if (student.getCourses() == null) {
+                        student.setCourses(new Course[MAX_REGISTERED_COURSES]);
+                    }
+
+                    student.getCourses()[student.getCourseNum()] = course;
+                    student.setCourseNum(student.getCourseNum() + 1);
+                    System.out.printf(course.toString());
+
+                }else{
+                        System.out.println("Max registered Course");
+                    }
+                } else {
+                    System.out.println("Student or department was not found input again.");
                 }
-
-                student.getCourses()[student.getCourseNum()] = course;
-                student.setCourseNum(student.getCourseNum() + 1);
-                System.out.printf("Student %s registered for course %s%n",student.getStudentId() , course.getCourseName());
-            }
-            else{
-                System.out.println("Max registered Course");
             }
         }
-        else{
-            System.out.println("Student or department was not found input again.");
-        }
-    }
-
     /**
      * find the course
      * @param courseId based on the course Id
