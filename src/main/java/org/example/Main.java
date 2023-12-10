@@ -11,31 +11,26 @@ public class Main {
 
         c1.addDepartment("Computer science");
 
-       //c1.printDepartment();
-
-        //c1.printStudent();
-
-        //c1.findDepartment("DOO1");
-
-        //c1.findCourse("C001");
 
         c1.addCourse("Intro to programing", 2.0, "DOO1");
 
-        c1.findCourse("COO1");
 
         c1.addStudent("s", "o","DOO1");
 
 
         c1.registerCourse("SOO1", "COO1");
-        System.out.println(c1.findCourse("COO1"));
+       // System.out.println(c1.findCourse("COO1"));
 
-        c1.findStudent("SOO1");
+        //c1.findStudent("SOO1");
 
         c1.addCourse("Arrays", 2.0,"DOO1");
 
         c1.registerCourse("SOO1", "COO2");
+        c1.registerCourse("SOO1", "COO2");
+        c1.
 
-        c1.hasRegisteredForThisCourse("SOO1", "COO2");
+       // c1.hasRegisteredForThisCourse("SOO1", "COO2");
+        //c1.printStudent();
 
     }
 }
