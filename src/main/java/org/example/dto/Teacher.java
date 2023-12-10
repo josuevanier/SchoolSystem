@@ -1,8 +1,9 @@
 package org.example.dto;
 
-import lombok.Getter;
+import lombok.Getter;import lombok.ToString;
 
 @Getter
+@ToString
 public class Teacher {
     private String lname;
     private String fname;
@@ -18,7 +19,11 @@ public class Teacher {
         this.id = String.format("TOO%d", nextId++);
     }
 
-    public String toString(){
-        return String.format("");
+    /**
+     *
+     * @return
+     */
+    public String getName(){
+        return fname + " " + lname;
     }
 }
