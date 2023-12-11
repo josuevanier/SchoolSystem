@@ -120,7 +120,7 @@ public class SchoolManagementSystem {
     public void printStudent(){
         for(Student student : students){
             if(student != null){
-                System.out.printf("Student info: id: %s, name: %s, First name: %s, department name: %s, number of course: %d: ",
+                System.out.printf("Student info: id: %s, name: %s, First name: %s, department name: %s, number of course: %d\n",
                         student.getStudentId(), student.getName(), student.getFname(),
                         student.getDepartment().getDepartmentName(), student.getCourseNum());
             }
@@ -139,7 +139,7 @@ public class SchoolManagementSystem {
             courses[courseCount++] = newCourse;
             System.out.println(newCourse);
         } else {
-            System.out.println("Course has reached its limits !");
+            System.out.println("Course has reached its limits !\n");
         }
     }
 
@@ -159,17 +159,17 @@ public class SchoolManagementSystem {
                     }
                     student.getCourses()[student.getCourseNum()] = course;
                     student.setCourseNum(student.getCourseNum() + 1);
-                    System.out.printf("Student %s registered for  %s%n",
+                    System.out.printf("Student %s registered for  %s\n",
                             student.getStudentId(), course.getCourseName());
                 } else {
-                    System.out.println("Max registered Course");
+                    System.out.println("Max registered Course\n");
                 }
             } else {
-                System.out.printf("Student %s is already in the course %s",
+                System.out.printf("Student %s is already in the course %s\n",
                         student.getStudentId(), course.getCourseName());
              }
         } else {
-            System.out.println("Student or department was not found : input again");
+            System.out.println("Student or department was not found : input again\n");
         }
     }
 
@@ -184,7 +184,7 @@ public class SchoolManagementSystem {
                 return course;
             }
         }
-        System.out.printf("Course %s is not found !", courseId);
+        System.out.printf("Course %s is not found !\n", courseId);
         return null;
     }
 
@@ -215,7 +215,7 @@ public class SchoolManagementSystem {
                 System.out.println(newStudent);
             }
             else{
-                System.out.println("Department was not found, enter proper department");
+                System.out.println("Department was not found, enter proper department\n");
             }
         }
         else {
@@ -249,7 +249,7 @@ public class SchoolManagementSystem {
                 return teacher;
             }
         }
-        System.out.printf("Teacher %s can't be found !",teacherId);
+        System.out.printf("Teacher %s can't be found !\n",teacherId);
         return null;
     }
 
@@ -267,7 +267,7 @@ public class SchoolManagementSystem {
                 teachers[teacherCount++] = newTeacher;
                 System.out.println(newTeacher);
             } else {
-                System.out.println("Department %s can't be found");
+                System.out.println("Department %s can't be found\n");
             }
         } else {
             System.out.printf("No more teachers can't be added. Max teachers: %d", MAX_TEACHERS);
