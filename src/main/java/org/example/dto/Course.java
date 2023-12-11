@@ -15,7 +15,6 @@ public class Course {
     private Student[] students;
     private Teacher teacher;
     private  String courseName;
-    private  Department department;
     private int studentNum;
     private  int nextId = 1;
 
@@ -29,14 +28,12 @@ public class Course {
         this.credit = credit;
         this.courseName = courseName;
         this.studentNum = 1;
-        this.department = department;
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
     }
     @Override
     public String toString() {
-        return String.format("Course{Id : %s |Credit: %f |course name : %s | Course teacher  : %s | Department : %s}\n",
-                id, credit, courseName, (teacher != null) ? teacher.getName() : "No teacher for this course",
-                department.getDepartmentName());
+        return String.format("Course{Id : %s |Credit: %f |course name : %s | Course teacher  : %s |}\n",
+                id, credit, courseName, (teacher != null) ? teacher.getName() : "No teacher for this course");
     }
 }
 
