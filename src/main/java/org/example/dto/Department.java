@@ -15,6 +15,7 @@ public class Department {
     private  int nextId = 1;
 
     /**
+     * Contains the info of a department
      * @param departmentName department name
      */
     public Department( String departmentName) {
