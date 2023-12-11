@@ -15,9 +15,7 @@ public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENTS = 5;
     @Getter
     private static final int MAX_STUDENTS = 200;
-    @Getter
     private static final int MAX_TEACHERS= 20;
-    @Getter
     private static final int MAX_COURSES = 30;
     @Getter
     private static final int MAX_REGISTERED_COURSES = 5;
