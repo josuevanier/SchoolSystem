@@ -10,8 +10,8 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Department {
-    private String id;
-    private String departmentName;
+    private final String id;
+    private final String departmentName;
     private  int nextId = 1;
 
     /**
