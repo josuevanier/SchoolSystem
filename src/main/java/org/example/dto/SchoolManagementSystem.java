@@ -20,7 +20,7 @@ public class SchoolManagementSystem {
     @Getter
     private static final int MAX_COURSES = 30;
     @Getter
-    private static final int MAX_REGISTERED_COURSES = 7;
+    private static final int MAX_REGISTERED_COURSES = 5;
 
     private Department[] departments;
     private final Student[] students;
