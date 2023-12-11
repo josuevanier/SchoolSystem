@@ -2,18 +2,25 @@ package org.example.dto;
 
 import lombok.Getter;
 
-
+/**
+ * Contains the info of a teacher
+ * @author Joseph Josue Forestal
+ */
 @Getter
-
 public class Teacher {
-    private String lname;
-    private String fname;
-    private Department department;
-    private String teacherId;
+    private final String lname;
+    private final String fname;
+    private final Department department;
+    private final String teacherId;
     private  int  nextId = 1;
 
+    /**
+     * Contains the info of a teacher as an object
+     * @param lname Last name of a teacher
+     * @param fname First name of a teacher
+     * @param department department of a teacher
+     */
     public Teacher(String lname, String fname, Department department){
-
         this.lname = lname;
         this.fname = fname;
         this.department = department;
@@ -29,7 +36,7 @@ public class Teacher {
     }
     @Override
     public String toString(){
-        return String.format("Teacher{Id: %s | Last name: %s | First name: %s | Department: %s | }",
+        return String.format("Teacher{Id: %s | Last name: %s | First name: %s | Department: %s | }\n",
                 teacherId, lname, fname, department.getDepartmentName());
     }
 }
