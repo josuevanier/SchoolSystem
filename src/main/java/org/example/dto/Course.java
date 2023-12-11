@@ -14,6 +14,7 @@ public class Course {
     private String id;
     private Student[] students;
     private Teacher teacher;
+    private Department department;
     private  String courseName;
     private int studentNum;
     private  int nextId = 1;
@@ -27,6 +28,7 @@ public class Course {
         this.id = String.format("COO%d", nextId++);
         this.credit = credit;
         this.courseName = courseName;
+        this.department = department;
         this.studentNum = 1;
         this.students = new Student[SchoolManagementSystem.getMAX_STUDENTS()];
     }
