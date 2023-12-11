@@ -3,9 +3,6 @@ package org.example.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Arrays;
-
-
 /**
  * Contains the info of a student
  * @author Joseph Josue Forestal
@@ -16,7 +13,6 @@ public class Student {
     private String fname;
     private String name;
     private String studentId;
-
     private int courseNum;
     private Department department;
     private Course[] courses;
@@ -24,7 +20,6 @@ public class Student {
 
     /**
      * Contains the info of a student as an object
-     *
      * @param fname      fname of student
      * @param name       last name of student
      * @param department student
