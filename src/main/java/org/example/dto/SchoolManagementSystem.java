@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Contains  method of a school management
+ * Contains  method of a school management system
  * @author Joseph Josue Forestal
  */
 @Getter
