@@ -38,4 +38,3 @@ public class Course {
                 id, credit, courseName, (teacher != null) ? teacher.getName() : "No teacher for this course");
     }
 }
-
